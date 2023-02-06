@@ -1,0 +1,58 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+.App{
+  /* height: 100vh; */
+  overflow:hidden;
+  overflow-y: hidden;
+  background: rgb(14,13,29);
+  background: linear-gradient(90deg, rgba(14,13,29,1) 24%, rgba(53,18,75,1) 76%);
+}
+
+.blob { 
+  width: 20px;
+  height: 17px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%22661.969%22 height=%22686.208%22 viewBox=%22137.12 141.769 661.969 686.208%22%3E%3Cdefs%3E%3ClinearGradient id=%22b%22 gradientTransform=%22rotate(165 .5 .5)%22%3E%3Cstop offset=%220%25%22 stop-color=%22%23FF3CAC%22%2F%3E%3Cstop offset=%2250%25%22 stop-color=%22%23784BA0%22%2F%3E%3Cstop offset=%22100%25%22 stop-color=%22%232b86c5%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath id=%22a%22%3E%3Cpath fill=%22currentColor%22 d=%22M758 649q-86 149-273.5 175.5t-291-149Q90 500 176.5 294.5t283-134.5Q656 231 750 365.5t8 283.5Z%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg clip-path=%22url(%23a)%22%3E%3Cpath fill=%22url(%23b)%22 d=%22M758 649q-86 149-273.5 175.5t-291-149Q90 500 176.5 294.5t283-134.5Q656 231 750 365.5t8 283.5Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
