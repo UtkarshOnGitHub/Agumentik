@@ -65,9 +65,9 @@ const Hero = () => {
     </Flex>
     <Flex    justifyContent='center' gap={"30px"}
         alignItems='center' color={"white"} fontSize="25px" marginTop={"-70px"}>
-        <Link to={links.instagram}><BsInstagram/></Link>
-        <Link to={links.facebook}><BsFacebook/></Link>
-        <Link to={links.linkedin}><BsLinkedin/></Link>
+        <Link to="#"><BsInstagram/></Link>
+        <Link to="#"><BsFacebook/></Link>
+        <Link to="#"><BsLinkedin/></Link>
     </Flex>
     <Flex justifyContent={"center"} marginTop="30px">
         <Button onClick={handleOpenModal} variant='solid' colorScheme='linkedin' borderRadius='20px' fontSize='14px' margin={"auto"}>LogIn As Admin</Button>
