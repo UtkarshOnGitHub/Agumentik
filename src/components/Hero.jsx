@@ -1,9 +1,33 @@
-import { Button, Flex, Image, Link, Text, VStack } from '@chakra-ui/react'
-import React from 'react'
+import { Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 import { BsFacebook, BsInstagram, BsLinkedin } from 'react-icons/bs'
 import Robot from '../assets/robot.png'
+import { Link } from 'react-router-dom'
+import ModalAdmin from './Modal'
+import axios from 'axios'
 
 const Hero = () => {
+    const [open,setOpen] = useState(false)
+    const [data,setData] = useState({})
+    const [links, setLinks] = useState({})
+    useEffect(()=>{
+        axios.get("https://dark-hat-jay.cyclic.app/content").then((res)=>{
+            console.log(res.data)
+            setData(res.data)
+        })
+        axios.get("https://dark-hat-jay.cyclic.app/links").then((res)=>{
+            console.log(res)
+            setLinks(res.data)
+        })
+    },[])
+    console.log(links)
+    const handleOpenModal = ()=>{
+            setOpen(true)
+    }
+
+    const closeModal = ()=>{
+        setOpen(false)
+    }
   return (
     <>
     <Flex
@@ -25,14 +49,14 @@ const Hero = () => {
                 color='white'   
                 lineHeight='65px'
             >
-                We Help Businesses Just Like Yours Grow Revenue
+                {data[0]?.title}
             </Text>
             <Text
                 color='whiteAlpha.600'
                 fontSize='18px'
                 w='80%'
             >
-                Increased online visibilities ensures you are seen by potential customers interested in your products & services.
+                {data[0]?.detail}
             </Text>
             <Button variant='solid' colorScheme='linkedin' borderRadius='20px' fontSize='14px'>Read More</Button>
         </VStack>
@@ -41,15 +65,14 @@ const Hero = () => {
     </Flex>
     <Flex    justifyContent='center' gap={"30px"}
         alignItems='center' color={"white"} fontSize="25px" marginTop={"-70px"}>
-        <BsInstagram/>
-        <BsFacebook/>
-        <BsLinkedin/>
+        <Link to={links.instagram}><BsInstagram/></Link>
+        <Link to={links.facebook}><BsFacebook/></Link>
+        <Link to={links.linkedin}><BsLinkedin/></Link>
     </Flex>
     <Flex justifyContent={"center"} marginTop="30px">
-        <Button variant='solid' colorScheme='linkedin' borderRadius='20px' fontSize='14px' margin={"auto"}>LogIn As Admin</Button>
+        <Button onClick={handleOpenModal} variant='solid' colorScheme='linkedin' borderRadius='20px' fontSize='14px' margin={"auto"}>LogIn As Admin</Button>
     </Flex>
-
-    
+    <ModalAdmin state={open} closeModal={closeModal}/>
     </>
   )
 }

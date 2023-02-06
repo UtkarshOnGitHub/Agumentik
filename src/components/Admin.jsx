@@ -25,8 +25,13 @@ import {
     MdOutlineEmail,
   } from 'react-icons/md';
   import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
+import { useEffect } from 'react';
   
-  export default function contact() {
+  export default function AdminPage() {
+
+    useEffect(()=>{
+        
+    },[])
     return (
       <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
         <Flex>
@@ -40,9 +45,9 @@ import {
               <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
                 <WrapItem>
                   <Box>
-                    <Heading>Contact</Heading>
+                    <Heading>Admin Page</Heading>
                     <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
-                      Fill up the form below to contact
+                      Change The Contents Of Page
                     </Text>
                     <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                       <VStack pl={0} spacing={3} alignItems="flex-start">
@@ -115,33 +120,25 @@ import {
                     <Box m={8} color="#0B0E3F">
                       <VStack spacing={5}>
                         <FormControl id="name">
-                          <FormLabel>Your Name</FormLabel>
+                          <FormLabel>Title</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<BsPerson color="gray.800" />}
-                            />
                             <Input type="text" size="md" />
                           </InputGroup>
                         </FormControl>
                         <FormControl id="name">
-                          <FormLabel>Mail</FormLabel>
+                          <FormLabel>Image Link</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
-                            <InputLeftElement
-                              pointerEvents="none"
-                              children={<MdOutlineEmail color="gray.800" />}
-                            />
                             <Input type="text" size="md" />
                           </InputGroup>
                         </FormControl>
                         <FormControl id="name">
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>Content</FormLabel>
                           <Textarea
                             borderColor="gray.300"
                             _hover={{
                               borderRadius: 'gray.300',
                             }}
-                            placeholder="message"
+                            placeholder="Enter Content"
                           />
                         </FormControl>
                         <FormControl id="name" float="right">

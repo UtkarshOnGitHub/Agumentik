@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import { Box } from '@chakra-ui/react'
+import Allroutes from './routes/Allroutes'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Hero />
+      <Allroutes/>
       <Box className='blob' position='absolute' top='50%' left='40%'></Box>
       <Box className='blob' position='absolute' transform='rotate(30deg)' top='90%' left='10%'></Box>
       <Box className='blob' position='absolute' transform='rotate(30deg)' top='10%' left='80%'></Box>
